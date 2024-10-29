@@ -1,0 +1,22 @@
+<!-- 
+docker-compose exec app php artisan migrate
+1. Thay vì chạy composer install trực tiếp từ máy, bạn sẽ cài đặt Composer trong container. Lệnh tương ứng:
+docker-compose exec app composer install
+2. Tương tự, khi cần cài đặt thêm gói mới với Composer, bạn cũng sẽ sử dụng Docker để chạy lệnh, ví dụ:
+docker-compose exec app composer require <package_name>
+3. Nếu bạn có container MySQL chạy trong Docker, bạn có thể sử dụng docker-compose exec để truy cập vào MySQL và quản lý database của mình.
+docker-compose exec db mysql -u root -p
+4. Xử lý các tiến trình liên quan đến queue và scheduler
+Nếu bạn có sử dụng Queue trong Laravel, bạn có thể chạy Queue Worker trong Docker bằng lệnh:
+docker-compose exec app php artisan queue:work
+5. Khởi động và dừng container
+ docker-compose up -d
+ dung bang lenh
+docker-compose down
+7. Cập nhật và build lại container khi cần
+docker-compose up --build -d
+8. Xử lý lỗi và kiểm tra logs
+Để kiểm tra logs của các container, bạn có thể dùng lệnh:
+docker-compose logs -f
+Hoặc, nếu chỉ cần xem logs của một container cụ thể (ví dụ app):
+docker-compose logs -f app -->
