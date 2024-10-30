@@ -1,4 +1,7 @@
 <!-- 
+0.. build container khi clone prj ve may(lenh nay yeu cau phai co file docker-compose.yml da tao)
+docker-compose up --build
+0. migrate csdl len phpmyadmin
 docker-compose exec app php artisan migrate
 1. Thay vì chạy composer install trực tiếp từ máy, bạn sẽ cài đặt Composer trong container. Lệnh tương ứng:
 docker-compose exec app composer install
